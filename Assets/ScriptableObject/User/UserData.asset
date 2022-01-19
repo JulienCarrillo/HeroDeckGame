@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d802a4bf2b37645b2d8334583c06d8, type: 3}
+  m_Name: UserData
+  m_EditorClassIdentifier: 
+  id: 2
+  Username: julien calliro
+  email: azerty@b.com
+  AccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDRhNjgxMzQyNTExZTIyN2UyODUxMWMwODgwYTlhYjYzNmFmYmZkOGQwN2JkNzM5ZDVmOGUxNGViZTIwM2YzMGYxNWVhM2EwOTcxYzIzMjEiLCJpYXQiOjE2NDI0MTYzNTEuNTY5NzA0LCJuYmYiOjE2NDI0MTYzNTEuNTY5NzA4LCJleHAiOjE2NzM5NTIzNTEuNTY1MTQ5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.UwvDzB8WtWfZQbi-gfCO_PI4qyK3Eyv-BrTRmMtf-MFsQ7OJory9j_we_IpdXQut09dsSPuEe1oCoS0VZ1T7P9C0bBrcxRPA7S6OaJNfiBOcQjdArBIfdZ6GRlEQuKcFtDq3nhtGYdolvaDlGppCFzD-_ZrDZm3LEuvoDImc73OScIg3ycRp2EiK_LgWW9y7JMnxcGZOR5tEOUlgWdmpejPTHpkN9nkOreDMMLgAVBjlYMFoYynFZY7uHd2GKIW3t5beLS5AF6V7qP9yAXubaS4cU3L2iAUdvoUBECFLddSnf4vfpykouqy9EmcSzUbx2HDWhNeLyVLV8nhFjwn9EZChrsTBsw7MsHzcJqUCr8CXuFCkD-2OF-Mo6QOlU4MxHHdKT7zMP1b7VcHuoyZ9qkkIKXqkcPe8_tWb4auQqsufXCmTacigZT9n2bfjUbPWIq9gqa-sXIjzWa5ATEL_oSKTh48ADpC2ykNwwC7YSFQIVP3fWx_c52CHlhgj4ztY-gJuha3eavh1RlVuCRJDQW54tn95Kjsg-UcCQSKxawfRecCsVXswjsOexRiZ-SLKXK0bIFKnLVn5u4eqpafo_GgErvxNVZWgfTOwbmOBCLOA9o5plEt4Su17h5XYnSEPrvNm8f6y16zwiH4FhracjOhpH7qx6SmXQDZyoIOKDgo
