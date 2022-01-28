@@ -18,4 +18,5 @@ public class CardData : ScriptableObject
     public MoveData move2;
     public MoveData move3;
     public MoveData move4;
+    public float price;
 }

@@ -84,6 +84,8 @@ public class CardGeneratorShop : MonoBehaviour
                     CardData.xp = (float)json[i]["xp"];
                     CardData.level = (int)json[i]["level"];
                     CardData.speed = (int)json[i]["speed"];
+                    CardData.price = (int)json[i]["price"];
+
 
                     //Check si l'element n'existe pas 
                     elementExistArray = AssetDatabase.FindAssets((string)json[i]["element"]["name"], new[] { "Assets/ScriptableObject/Card/ElementData" });

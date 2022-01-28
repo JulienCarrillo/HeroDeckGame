@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heigt
   m_EditorClassIdentifier: 
   id: 8
-  userId: 2
+  userId: 0
   heroName: Heigt
   img: https://www.papyswarriors.com/medias/album/3-Florizarre.png
   max_life_point: 1000
@@ -21,8 +21,9 @@ MonoBehaviour:
   xp: 0
   level: 1
   speed: 10
-  element: {fileID: 11400000, guid: 6381cb3ec198dbf4586b10714089001e, type: 2}
+  element: {fileID: 11400000, guid: 816b8ac25afa42c43a050e85b3125296, type: 2}
   move1: {fileID: 11400000, guid: db9ed5ea859e4ec47afd6eeeba4d6032, type: 2}
   move2: {fileID: 11400000, guid: db9ed5ea859e4ec47afd6eeeba4d6032, type: 2}
   move3: {fileID: 11400000, guid: 68a1d1910a048bb4e97d24ffb859d091, type: 2}
   move4: {fileID: 11400000, guid: aad51e63e6bd54b4ea2b132f648c6832, type: 2}
+  price: 300

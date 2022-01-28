@@ -12,7 +12,6 @@ using UnityEngine.UI;
 public class CardDataGenerator : MonoBehaviour
 {
     public UserData UserData;
-    public TextMeshProUGUI UserName;
     private ElementData elementData;
     private ElementData weaknessData;
     private MoveData MoveData1;
@@ -28,7 +27,6 @@ public class CardDataGenerator : MonoBehaviour
     {
 
        
-        UserName.text = string.Concat(UserName.text, UserData.Username);
         string url = "http://127.0.0.1:8000/api/v1/user/" + UserData.id + "/heroes";
         StartCoroutine(CallingAPIToGetHeroes(url));
 
@@ -57,16 +55,16 @@ public class CardDataGenerator : MonoBehaviour
             for (int i = 0; i <= json.Count - 1; i++)
             {
                 
-                CardData = ScriptableObject.CreateInstance<CardData>();
-                MoveData1 = ScriptableObject.CreateInstance<MoveData>(); ;
-                MoveData2 = ScriptableObject.CreateInstance<MoveData>();
-                MoveData3 = ScriptableObject.CreateInstance<MoveData>();
-                MoveData4 = ScriptableObject.CreateInstance<MoveData>();
-                elementData = ScriptableObject.CreateInstance<ElementData>();
-                weaknessData = ScriptableObject.CreateInstance<ElementData>();
+                CardData = ScriptableObject.CreateInstance<CardData>(); //ATTENTION NE FONCTIONNE PAS EN BUILD -> creer une class au lieu d'un scriptable object
+                MoveData1 = ScriptableObject.CreateInstance<MoveData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
+                MoveData2 = ScriptableObject.CreateInstance<MoveData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
+                MoveData3 = ScriptableObject.CreateInstance<MoveData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
+                MoveData4 = ScriptableObject.CreateInstance<MoveData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
+                elementData = ScriptableObject.CreateInstance<ElementData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
+                weaknessData = ScriptableObject.CreateInstance<ElementData>();//ATTENTION NE FONCTIONNE PAS EN BUILD -> remplace by ressource.load 
                 Debug.Log("loop" + i);
                 //Check si la card n'existe pas déja
-                cardExistArray = AssetDatabase.FindAssets("Card" + (string)json[i]["id"], new[] { "Assets/ScriptableObject/Card/CardData" });
+                cardExistArray = AssetDatabase.FindAssets("Card" + (string)json[i]["id"], new[] { "Assets/ScriptableObject/Card/CardData" }); //Ressource.load 
                 List<string> cardExist = cardExistArray.ToList<string>();
 
                 if (cardExist.Count() == 0)
@@ -85,14 +83,14 @@ public class CardDataGenerator : MonoBehaviour
                     CardData.speed = (int)json[i]["speed"];
 
                     //Check si l'element n'existe pas 
-                    elementExistArray = AssetDatabase.FindAssets((string)json[i]["element"]["name"], new[] { "Assets/ScriptableObject/Card/ElementData" });
+                    elementExistArray = AssetDatabase.FindAssets((string)json[i]["element"]["name"], new[] { "Assets/ScriptableObject/Card/ElementData" }); //ressource.load
                     List<string> elementExist = elementExistArray.ToList<string>();
                     if (elementExist.Count() == 0)
                     {
                         elementData.name = (string)json[i]["element"]["name"];
                         elementData.elementName = (string)json[i]["element"]["name"];
                         elementData.weakness_id = (int)json[i]["element"]["weakness_id"];
-                        AssetDatabase.CreateAsset(elementData, "Assets/ScriptableObject/Card/ElementData/" + elementData.name + ".asset");
+                        AssetDatabase.CreateAsset(elementData, "Assets/ScriptableObject/Card/ElementData/" + elementData.name + ".asset");//ressource.load
                     }
                     else
                     {
@@ -104,7 +102,7 @@ public class CardDataGenerator : MonoBehaviour
                     elementExist.Clear();
 
                     //Check si le move1 n'existe pas déja
-                    moveExistArray = AssetDatabase.FindAssets((string)json[i]["Move1"]["name"], new[] { "Assets/ScriptableObject/Card/MoveData" });
+                    moveExistArray = AssetDatabase.FindAssets((string)json[i]["Move1"]["name"], new[] { "Assets/ScriptableObject/Card/MoveData" }); //ressource.load
                     List<string> moveExist = moveExistArray.ToList<string>();
                     if (moveExist.Count() == 0)
                     {
@@ -118,7 +116,7 @@ public class CardDataGenerator : MonoBehaviour
                             MoveData1.min_dpt = (int)json[i]["Move1"]["min_dpt"];
                             MoveData1.max_dpt = (int)json[i]["Move1"]["max_dpt"];
                         }
-                        AssetDatabase.CreateAsset(MoveData1, "Assets/ScriptableObject/Card/MoveData/" + MoveData1.name + ".asset");
+                        AssetDatabase.CreateAsset(MoveData1, "Assets/ScriptableObject/Card/MoveData/" + MoveData1.name + ".asset"); 
                     }
                     else
                     {

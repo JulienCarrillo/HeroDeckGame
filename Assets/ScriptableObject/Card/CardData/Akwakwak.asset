@@ -26,3 +26,4 @@ MonoBehaviour:
   move2: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
   move3: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
   move4: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  price: 996

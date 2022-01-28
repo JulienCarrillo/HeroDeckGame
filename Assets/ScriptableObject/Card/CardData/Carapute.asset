@@ -22,7 +22,8 @@ MonoBehaviour:
   level: 1
   speed: 10
   element: {fileID: 11400000, guid: 92db4fcdd8a6d384f9da5cad2db4cf7c, type: 2}
-  move1: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  move1: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
   move2: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
   move3: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
-  move4: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  move4: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
+  price: 30
