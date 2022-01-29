@@ -1106,7 +1106,7 @@ PrefabInstance:
     - target: {fileID: 3640761529183523576, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
       propertyPath: m_CellSize.y
-      value: 130
+      value: 136.7
       objectReference: {fileID: 0}
     - target: {fileID: 3640761529183523576, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
@@ -1176,7 +1176,7 @@ PrefabInstance:
     - target: {fileID: 3640761529183523577, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.3
+      value: -5.0576
       objectReference: {fileID: 0}
     - target: {fileID: 3640761529183523577, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
@@ -1186,7 +1186,7 @@ PrefabInstance:
     - target: {fileID: 3640761529183523577, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1087.6399
+      value: 1104.355
       objectReference: {fileID: 0}
     - target: {fileID: 3640761529183523577, guid: 33cbe1d91dba338488113cb37577fc48,
         type: 3}
@@ -1973,6 +1973,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8864227071083518754, guid: 33cbe1d91dba338488113cb37577fc48,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cbe1d91dba338488113cb37577fc48, type: 3}
 --- !u!1001 &7803766690061682917
@@ -1985,12 +1990,12 @@ PrefabInstance:
     - target: {fileID: 7803766689414513953, guid: 7127dad2c0380c44489b667a595ab2c6,
         type: 3}
       propertyPath: m_CellSize.x
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7803766689414513953, guid: 7127dad2c0380c44489b667a595ab2c6,
         type: 3}
       propertyPath: m_CellSize.y
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7803766689414513953, guid: 7127dad2c0380c44489b667a595ab2c6,
         type: 3}

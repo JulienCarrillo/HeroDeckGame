@@ -19,7 +19,7 @@ public class Drop : MonoBehaviour, IDropHandler,IPointerClickHandler
         {
             //Set slot as parent of card
             cardInSlot.transform.SetParent(slot.transform); //Je la met dans le slot parent 
-            cardInSlot.GetComponent<RectTransform>().anchoredPosition = new Vector2(65f, -65f); //je met la carte au centre de son parent
+            cardInSlot.GetComponent<RectTransform>().anchoredPosition = new Vector2(65f, -70f); //je met la carte au centre de son parent
         }
         else
         {

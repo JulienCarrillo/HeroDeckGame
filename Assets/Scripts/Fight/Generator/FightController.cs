@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 public class FightController : MonoBehaviour
 {
     public GameObject CardsContainer;
+   
 
 
     // Methode qui sera appeler dans la coroutine, elle prendra en paramettre le scriptable object
@@ -28,6 +29,8 @@ public class FightController : MonoBehaviour
         //get inputfields 
         RawImage HeroImg = NewCard.transform.GetChild(0).gameObject.GetComponent<RawImage>();
 
+        TextMeshProUGUI Range = NewCard.transform.GetChild(5).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        
         TextMeshProUGUI Move1 = NewCard.transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         Image Move1Image = NewCard.transform.GetChild(1).gameObject.GetComponent<Image>();
 
@@ -40,15 +43,24 @@ public class FightController : MonoBehaviour
         TextMeshProUGUI Move4 = NewCard.transform.GetChild(4).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         Image Move4Image = NewCard.transform.GetChild(4).gameObject.GetComponent<Image>();
 
+        // Name of card
+        TextMeshProUGUI CardName = NewCard.transform.GetChild(6).GetChild(5).gameObject.GetComponent<TextMeshProUGUI>();
         //Moves button
-        Text Move1ButtonText = NewCard.transform.GetChild(5).GetChild(1).GetChild(0).gameObject.GetComponent<Text>();
-        Text Move2ButtonText = NewCard.transform.GetChild(5).GetChild(2).GetChild(0).gameObject.GetComponent<Text>();
-        Text Move3ButtonText = NewCard.transform.GetChild(5).GetChild(3).GetChild(0).gameObject.GetComponent<Text>();
-        Text Move4ButtonText = NewCard.transform.GetChild(5).GetChild(4).GetChild(0).gameObject.GetComponent<Text>();
-        Button Move1Button = NewCard.transform.GetChild(5).GetChild(1).gameObject.GetComponent<Button>();
+        Text Move1ButtonText = NewCard.transform.GetChild(6).GetChild(1).GetChild(0).gameObject.GetComponent<Text>();
+        Text Move2ButtonText = NewCard.transform.GetChild(6).GetChild(2).GetChild(0).gameObject.GetComponent<Text>();
+        Text Move3ButtonText = NewCard.transform.GetChild(6).GetChild(3).GetChild(0).gameObject.GetComponent<Text>();
+        Text Move4ButtonText = NewCard.transform.GetChild(6).GetChild(4).GetChild(0).gameObject.GetComponent<Text>();
 
-        //TextMeshProUGUI Name = NewCard.transform.GetChild(5).gameObject.GetComponent<TextMeshProUGUI>();
-        //TextMeshProUGUI HpField = NewCard.transform.GetChild(6).gameObject.GetComponent<TextMeshProUGUI>();
+
+        //Set Name 
+        CardName.text = CardData.heroName;
+
+        //Set HealthBar 
+        HealthBar healthBar = NewCard.transform.GetChild(7).gameObject.GetComponent<HealthBar>();
+        healthBar.SetHealth((int)((CardData.current_life_point*100)/CardData.max_life_point));
+
+        // Set Range 
+        Range.text = CardData.speed.ToString();
         //TextMeshProUGUI Speed = NewCard.transform.GetChild(7).gameObject.GetComponent<TextMeshProUGUI>();
         //TextMeshProUGUI Amount = NewCard.transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
 
@@ -99,6 +111,10 @@ public class FightController : MonoBehaviour
 
         StartCoroutine(GetImage(CardData.img, HeroImg));
 
+        HeroController Hero = NewCard.GetComponent<HeroController>();
+
+        //Ajout de cardData dans la carte via HerooController
+        Hero.AddCardData(CardData);
 
     }
     IEnumerator GetImage(string url, RawImage HeroImg)
