@@ -2239,7 +2239,7 @@ PrefabInstance:
     - target: {fileID: 8676405099605930183, guid: a73a6ccb696616548b5aa1590f67e4ed,
         type: 3}
       propertyPath: m_Name
-      value: FightController
+      value: Cardgenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a73a6ccb696616548b5aa1590f67e4ed, type: 3}

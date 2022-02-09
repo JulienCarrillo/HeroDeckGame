@@ -15,6 +15,7 @@ MonoBehaviour:
   moveName: Frost
   attack_point: 20
   defence_point: 0
-  element: {fileID: 0}
+  element: {fileID: 11400000, guid: 6381cb3ec198dbf4586b10714089001e, type: 2}
   min_dpt: 0
   max_dpt: 0
+  range: 3

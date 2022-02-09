@@ -26,6 +26,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
+            
     }
 
     public void OnDrag(PointerEventData eventData)

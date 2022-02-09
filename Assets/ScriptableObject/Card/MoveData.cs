@@ -10,5 +10,6 @@ public class MoveData : ScriptableObject
     public int defence_point;
     public ElementData element;
     public int min_dpt;
-    public int max_dpt; 
+    public int max_dpt;
+    public int range;
 }

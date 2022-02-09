@@ -5,14 +5,27 @@ using UnityEngine.UI;
 
 public class moves : MonoBehaviour
 {
-    public GameObject MovesPanel;
+    public GameObject PopUpPanel;
     public void PopUp()
     {
-        MovesPanel.SetActive(true);
+        HeroController.buttonIsClicked = false;
+        if (Drop.PointerIsOnSlot)
+        {
+            PopUpPanel.SetActive(true);
+        }
+        
     }
 
     public void ClosePopUp()
     {
-        MovesPanel.SetActive(false);
+        PopUpPanel.SetActive(false);
+    }
+
+    private void FixedUpdate()
+    {
+        if (HeroController.buttonIsClicked)
+        {
+            ClosePopUp();
+        }
     }
 }

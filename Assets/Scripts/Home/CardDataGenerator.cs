@@ -116,6 +116,7 @@ public class CardDataGenerator : MonoBehaviour
                             MoveData1.min_dpt = (int)json[i]["Move1"]["min_dpt"];
                             MoveData1.max_dpt = (int)json[i]["Move1"]["max_dpt"];
                         }
+                        MoveData1.range = (int)json[i]["Move1"]["range"];
                         AssetDatabase.CreateAsset(MoveData1, "Assets/ScriptableObject/Card/MoveData/" + MoveData1.name + ".asset"); 
                     }
                     else
@@ -141,6 +142,7 @@ public class CardDataGenerator : MonoBehaviour
                             MoveData2.min_dpt = (int)json[i]["Move2"]["min_dpt"];
                             MoveData2.max_dpt = (int)json[i]["Move2"]["max_dpt"];
                         }
+                        MoveData2.range = (int)json[i]["Move2"]["range"];
                         AssetDatabase.CreateAsset(MoveData2, "Assets/ScriptableObject/Card/MoveData/" + MoveData2.name + ".asset");
                     }
                     else
@@ -166,6 +168,7 @@ public class CardDataGenerator : MonoBehaviour
                             MoveData3.min_dpt = (int)json[i]["Move3"]["min_dpt"];
                             MoveData3.max_dpt = (int)json[i]["Move3"]["max_dpt"];
                         }
+                        MoveData3.range = (int)json[i]["Move3"]["range"];
                         AssetDatabase.CreateAsset(MoveData3, "Assets/ScriptableObject/Card/MoveData/" + MoveData3.name + ".asset");
                     }
                     else
@@ -190,6 +193,7 @@ public class CardDataGenerator : MonoBehaviour
                             MoveData4.min_dpt = (int)json[i]["Move4"]["min_dpt"];
                             MoveData4.max_dpt = (int)json[i]["Move4"]["max_dpt"];
                         }
+                        MoveData4.range = (int)json[i]["Move4"]["range"];
                         AssetDatabase.CreateAsset(MoveData4, "Assets/ScriptableObject/Card/MoveData/" + MoveData4.name + ".asset");
                     }
                     else

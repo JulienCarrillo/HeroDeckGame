@@ -111,10 +111,7 @@ public class FightController : MonoBehaviour
 
         StartCoroutine(GetImage(CardData.img, HeroImg));
 
-        HeroController Hero = NewCard.GetComponent<HeroController>();
-
-        //Ajout de cardData dans la carte via HerooController
-        Hero.AddCardData(CardData);
+        
 
     }
     IEnumerator GetImage(string url, RawImage HeroImg)

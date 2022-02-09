@@ -18,3 +18,4 @@ MonoBehaviour:
   element: {fileID: 11400000, guid: 6381cb3ec198dbf4586b10714089001e, type: 2}
   min_dpt: 0
   max_dpt: 0
+  range: 1
