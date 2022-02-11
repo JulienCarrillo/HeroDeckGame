@@ -11,7 +11,9 @@ using UnityEngine.SceneManagement;
 public class FightController : MonoBehaviour
 {
     public GameObject CardsContainer;
-   
+    public GameObject CombatController;
+    public bool isPlayerCard;
+    //public List<GameObject> cards;
 
 
     // Methode qui sera appeler dans la coroutine, elle prendra en paramettre le scriptable object
@@ -20,11 +22,13 @@ public class FightController : MonoBehaviour
     {
         //Importer un nouveau game object card 
         GameObject CardPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Fight/Fight"+CardData.element.name+".prefab", typeof(GameObject)) as GameObject;
+       
+
 
         //Instance d'un nouveau prefab, enfant de CardContainer ces values 
         var NewCard = Instantiate(CardPrefab);
         NewCard.transform.SetParent(CardsContainer.gameObject.transform);
-        NewCard.transform.localScale = new Vector3(1f, 1f, 1f);
+        NewCard.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
    
         //get inputfields 
         RawImage HeroImg = NewCard.transform.GetChild(0).gameObject.GetComponent<RawImage>();
@@ -57,13 +61,21 @@ public class FightController : MonoBehaviour
 
         //Set HealthBar 
         HealthBar healthBar = NewCard.transform.GetChild(7).gameObject.GetComponent<HealthBar>();
-        healthBar.SetHealth((int)((CardData.current_life_point*100)/CardData.max_life_point));
+        //A remettre en fin de test
+        //healthBar.SetHealth((int)((CardData.current_life_point*100)/CardData.max_life_point));
+        healthBar.SetHealth((int)(5));
+
 
         // Set Range 
         Range.text = CardData.speed.ToString();
         //TextMeshProUGUI Speed = NewCard.transform.GetChild(7).gameObject.GetComponent<TextMeshProUGUI>();
         //TextMeshProUGUI Amount = NewCard.transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        if(isPlayerCard)
+            CombatController.GetComponent<CombatController>().GeneratePlayerCardList(NewCard);
+        else
+            CombatController.GetComponent<CombatController>().GenerateEnemyCardList(NewCard);
 
+        //cards.Add(NewCard);
         //Asign Values on inputfields
         if (CardData.move1.attack_point != 0) { 
             Move1.text = CardData.move1.attack_point.ToString();

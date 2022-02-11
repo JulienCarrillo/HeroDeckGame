@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class HeroController : MonoBehaviour
@@ -12,8 +13,8 @@ public class HeroController : MonoBehaviour
     public static bool buttonIsClicked;
 
   
-
-    public void HeroMove(Text moveName) //La fonction est instaintier avant la recuperation du cardData
+    //On Click sur le move bouton du panel
+    public void HeroMove(Text moveName) 
     {
         //CardData card = GetComponent<CardData>();
         MoveData move = AssetDatabase.LoadAssetAtPath("Assets/ScriptableObject/Card/MoveData/"+moveName.text+".asset", typeof(MoveData)) as MoveData;
@@ -38,6 +39,13 @@ public class HeroController : MonoBehaviour
         else
             Debug.Log("hero move : +" + heroMovePoint);
 
+        
+        //Desactivation de tous les autre cartes pour pouvoir cliquer sur le slot a attacker
+        GameObject card = transform.parent.parent.gameObject;
+        //Get le CombatController et desactive les raycats des carte
+        CombatController _CombatController = transform.root.gameObject.GetComponentInChildren<CombatController>();
+        _CombatController.GetComponent<CombatController>().DisableRayCastOnCards(card);
+
         chooseEnemySlot(heroMovePoint, moveRange, isAttacking);
        
     }
@@ -46,30 +54,48 @@ public class HeroController : MonoBehaviour
         int[] outRowLeft = new int[] {5, 11, 17, 23, 29, 35, 41, 47 }; // => 
         int[] outRowRight = new int[] { 0, 6, 12, 18, 24, 30, 36, 42 }; // <= 
         int[] outColUp = new int[] { 0, 1, 2, 3, 4, 5};//^
-        int[] outColDown = new int[] { 42, 43, 44, 45, 46, 47 };//^
+        int[] outColDown = new int[] { 36, 37, 38, 39, 40, 41 };//^
 
 
         Canvas canvasSlot = gameObject.transform.parent.parent.parent.parent.GetComponentInParent<Canvas>();
         Image slot = gameObject.transform.parent.parent.parent.GetComponent<Image>();
         int thisIndex = slot.transform.GetSiblingIndex();
         canvasSlot.transform.GetChild(0).GetChild(thisIndex).GetSiblingIndex();
-        //Debug.Log(canvasSlot.name);
-        //Desactivation de toues les autre cartes
+
+        ////Desactivation de tous les autre cartes pour pouvoir cliquer sur le slot a attacker
+        //GameObject card = transform.parent.parent.gameObject;
+
+        ////Get le CombatController
+        //CombatController _CombatController = transform.root.gameObject.GetComponentInChildren<CombatController>();
+        
+
         buttonOutClicked();
 
+        ////enelve les interaction de toute les carte 
+        //for (int i = 0; i <= 41; i++)
+        //{
+        //    canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<CanvasGroup>().interactable = false;
+        //}
 
         for (int i = thisIndex+1; i <= thisIndex+range; i++) // =>
         {
-            if (canvasSlot.transform.GetChild(0).GetChild(i).childCount == 0)
+            canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<CanvasGroup>().interactable = true;
+            if (canvasSlot.transform.GetChild(0).GetChild(i).childCount == 0) 
+            { 
                 canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = Resources.Load<Sprite>("SlotGreen");
-            else
+            }
+            else 
+            { 
                 canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = Resources.Load<Sprite>("SlotRed");
+            }
             if (outRowLeft.Contains(i) || outRowLeft.Contains(thisIndex))
                 break;
 
         }
         for (int i = thisIndex-1; i >= thisIndex - range; i--) // <=
         {
+            canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<CanvasGroup>().interactable = true;
+
             if (canvasSlot.transform.GetChild(0).GetChild(i).childCount == 0)
                 canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = Resources.Load<Sprite>("SlotGreen");
             else
@@ -81,6 +107,8 @@ public class HeroController : MonoBehaviour
         }
         for (int i = thisIndex+6; i <= thisIndex + range * 6; i += 6) //v
         {
+            canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<CanvasGroup>().interactable = true;
+
             if (canvasSlot.transform.GetChild(0).GetChild(i).childCount == 0)
                 canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = Resources.Load<Sprite>("SlotGreen");
             else
@@ -92,6 +120,8 @@ public class HeroController : MonoBehaviour
         }
         for (int i = thisIndex - 6; i >= thisIndex - range * 6; i -= 6)//^
         {
+            canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<CanvasGroup>().interactable = true;
+
             if (canvasSlot.transform.GetChild(0).GetChild(i).childCount == 0)
                 canvasSlot.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = Resources.Load<Sprite>("SlotGreen");
             else
@@ -100,10 +130,15 @@ public class HeroController : MonoBehaviour
                 break;
 
         }
+        
+       
 
+        
     }
 
-    //bool how trigger popup
+
+
+    //bool who trigger popup
     public void buttonClicked()
     {
         buttonIsClicked = true;
@@ -112,4 +147,7 @@ public class HeroController : MonoBehaviour
     {
         buttonIsClicked = false;
     }
+  
+
+
 }

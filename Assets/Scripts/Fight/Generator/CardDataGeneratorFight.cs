@@ -61,7 +61,6 @@ public class CardDataGeneratorFight : MonoBehaviour
                 MoveData4 = ScriptableObject.CreateInstance<MoveData>();
                 elementData = ScriptableObject.CreateInstance<ElementData>();
                 weaknessData = ScriptableObject.CreateInstance<ElementData>();
-                Debug.Log("loop" + i);
                 //Check si la card n'existe pas déja
                 cardExistArray = AssetDatabase.FindAssets("Card" + (string)json[i]["id"], new[] { "Assets/ScriptableObject/Card/CardData" });
                 List<string> cardExist = cardExistArray.ToList<string>();

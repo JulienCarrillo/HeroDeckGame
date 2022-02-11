@@ -15,16 +15,16 @@ public class HomeController : MonoBehaviour
 {
 
     public GameObject CardsContainer;
- 
+
+
 
     // Methode qui sera appeler dans la coroutine, elle prendra en paramettre le scriptable object
     //CardData ansi que le prefab a instancier 
     public void CreateCardPrefab(CardData CardData)
     {
         //Importer un nouveau game object card 
-        //Modifier la route en "Assets/Prefab/"+CardData.element.elementName + ".prefab quand les Design des cartes seront creer"Assets/Prefab/Cards/Card"+CardData.element.elementName+".prefab
-        //GameObject CardPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefab/CardPsy.prefab", typeof(GameObject)) as GameObject;
-        GameObject CardPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Cards/Card"+CardData.element.elementName+".prefab", typeof(GameObject)) as GameObject;
+        GameObject CardPrefab = Resources.Load("Prefabs/Cards/HomeCards/Card" + CardData.element.elementName, typeof(GameObject)) as GameObject;
+        //Local : GameObject CardPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Cards/Card"+CardData.element.elementName+".prefab", typeof(GameObject)) as GameObject;
 
         //Instance d'un nouveau prefab, enfant de CardContainer ces values 
         var NewCard = Instantiate(CardPrefab);

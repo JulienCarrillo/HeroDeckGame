@@ -24,20 +24,23 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.5f;
-        canvasGroup.blocksRaycasts = false;
-            
+        //Bloque le drag si interactable est false 
+        if(canvasGroup.interactable == false)
+            eventData.pointerDrag = null;
+        else { 
+            canvasGroup.alpha = 0.5f;
+            canvasGroup.blocksRaycasts = false;
+        }
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //Debug.Log("Pose : " + rectransform.anchoredPosition);
         rectransform.anchoredPosition += eventData.delta/canvas.scaleFactor; // delta : vector2 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log(cardContainer.name);
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         card = eventData.pointerDrag.gameObject;

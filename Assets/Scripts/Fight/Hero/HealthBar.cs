@@ -11,4 +11,9 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = health;
     }
+
+    public void looseHealth(int attackpoint)
+    {
+        slider.value -= attackpoint;
+    }
 }

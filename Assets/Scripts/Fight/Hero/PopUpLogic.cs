@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class moves : MonoBehaviour
+public class PopUpLogic : MonoBehaviour
 {
     public GameObject PopUpPanel;
     public void PopUp()
@@ -18,6 +18,7 @@ public class moves : MonoBehaviour
 
     public void ClosePopUp()
     {
+        //Debug.Log(HeroController.buttonIsClicked);
         PopUpPanel.SetActive(false);
     }
 
