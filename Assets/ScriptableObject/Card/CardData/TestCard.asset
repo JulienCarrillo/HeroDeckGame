@@ -21,9 +21,9 @@ MonoBehaviour:
   xp: 0
   level: 1
   speed: 3
-  element: {fileID: 11400000, guid: 0522354ea014b444985562ad4eb75f38, type: 2}
+  element: {fileID: 11400000, guid: 49ad864591c4c614bb0d0896bd7be94d, type: 2}
   move1: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
-  move2: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  move2: {fileID: 11400000, guid: aad51e63e6bd54b4ea2b132f648c6832, type: 2}
   move3: {fileID: 11400000, guid: db9ed5ea859e4ec47afd6eeeba4d6032, type: 2}
   move4: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
   price: 0

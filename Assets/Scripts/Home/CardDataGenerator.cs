@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-
+#if (UNITY_EDITOR) 
 //Utiliser cette class pour ajouter de nouvelles cartes -> PAS EN PROD 
 public class CardDataGenerator : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class CardDataGenerator : MonoBehaviour
     void Start()
     {
 
-        string url = "http://127.0.0.1:8000/api/v1/getallheroes";
+        string url = "https://herodeck-api.herokuapp.com/api/v1/getallheroes";
         //local : string url = "http://127.0.0.1:8000/api/v1/user/" + UserData.id + "/heroes";
         StartCoroutine(CallingAPIToGetHeroes(url));
 
@@ -90,6 +90,7 @@ public class CardDataGenerator : MonoBehaviour
                     CardData.xp = (float)json[i]["xp"];
                     CardData.level = (int)json[i]["level"];
                     CardData.speed = (int)json[i]["speed"];
+                    CardData.price = (int)json[i]["price"];
 
                     //Check si l'element n'existe pas 
                     elementExistArray = AssetDatabase.FindAssets((string)json[i]["element"]["name"], new[]  { "Assets/Resources/ScriptableObject/Card/ElementData" });
@@ -114,7 +115,7 @@ public class CardDataGenerator : MonoBehaviour
                     elementExist.Clear();
 
                     //Check si le move1 n'existe pas déja
-                    moveExistArray = AssetDatabase.FindAssets((string)json[i]["Move1"]["name"], new[]  { "Assets/Resources/ScriptableObject/Card/MoveData" });
+                    moveExistArray = AssetDatabase.FindAssets((string)json[i]["Move1"]["name"], new[] { "Assets/Resources/ScriptableObject/Card/MoveData" });
                     //Local : moveExistArray = AssetDatabase.FindAssets((string)json[i]["Move1"]["name"], new[] { "Assets/ScriptableObject/Card/MoveData" }); //ressource.load
                     List<string> moveExist = moveExistArray.ToList<string>();
                     if (moveExist.Count() == 0)
@@ -240,3 +241,4 @@ public class CardDataGenerator : MonoBehaviour
         }
     }
 }
+#endif

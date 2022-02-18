@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661d77dd8ae962e46997e01aeef52f7e, type: 3}
   m_Name: Salameche
   m_EditorClassIdentifier: 
-  id: 2
-  userId: 2
+  id: 3
+  userId: 1
   heroName: Salameche
-  img: https://www.papyswarriors.com/medias/album/4-Salameche.png
-  max_life_point: 200
-  current_life_point: 200
+  img: https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png
+  max_life_point: 100
+  current_life_point: 100
   xp: 0
   level: 1
   speed: 10
   element: {fileID: 11400000, guid: 6381cb3ec198dbf4586b10714089001e, type: 2}
   move1: {fileID: 11400000, guid: aad51e63e6bd54b4ea2b132f648c6832, type: 2}
-  move2: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
-  move3: {fileID: 11400000, guid: db9ed5ea859e4ec47afd6eeeba4d6032, type: 2}
-  move4: {fileID: 11400000, guid: aad51e63e6bd54b4ea2b132f648c6832, type: 2}
-  price: 23
+  move2: {fileID: 11400000, guid: db9ed5ea859e4ec47afd6eeeba4d6032, type: 2}
+  move3: {fileID: 11400000, guid: e640464f0f44d3044a2dd137209f9427, type: 2}
+  move4: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
+  price: 0

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Frost
   m_EditorClassIdentifier: 
   moveName: Frost
-  attack_point: 20
+  attack_point: 40
   defence_point: 0
-  element: {fileID: 11400000, guid: b6564f5ef3f2fd14a887078134582f0a, type: 2}
+  element: {fileID: 11400000, guid: 8a9fcd184a03d824a902877b87e207ab, type: 2}
   min_dpt: 0
   max_dpt: 0
-  range: 3
+  range: 4

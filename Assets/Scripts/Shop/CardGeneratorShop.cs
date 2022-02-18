@@ -9,6 +9,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using System;
 
+#if (UNITY_EDITOR) 
 public class CardGeneratorShop : MonoBehaviour
 {
     public UserData UserData;
@@ -64,6 +65,7 @@ public class CardGeneratorShop : MonoBehaviour
                 weaknessData = ScriptableObject.CreateInstance<ElementData>();
                 Debug.Log("loop" + i);
                 //Check si la card n'existe pas déja
+
                 cardExistArray = AssetDatabase.FindAssets("Card" + (string)json[i]["id"], new[] { "Assets/ScriptableObject/Card/CardData" });
                 List<string> cardExist = cardExistArray.ToList<string>();
 
@@ -222,3 +224,6 @@ public class CardGeneratorShop : MonoBehaviour
         }
     }
 }
+
+
+#endif

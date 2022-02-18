@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: RegenFlower
   attack_point: 0
-  defence_point: 20
+  defence_point: 50
   element: {fileID: 11400000, guid: 8a9fcd184a03d824a902877b87e207ab, type: 2}
   min_dpt: 0
   max_dpt: 0
-  range: 4
+  range: 5

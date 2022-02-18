@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Bite
   m_EditorClassIdentifier: 
   moveName: Bite
-  attack_point: 12
+  attack_point: 20
   defence_point: 0
-  element: {fileID: 11400000, guid: cd39a732ab2e48641bd0789df585a839, type: 2}
+  element: {fileID: 11400000, guid: 8a9fcd184a03d824a902877b87e207ab, type: 2}
   min_dpt: 0
   max_dpt: 0
   range: 2

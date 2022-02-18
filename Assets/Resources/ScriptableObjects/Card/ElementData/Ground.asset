@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ground
   m_EditorClassIdentifier: 
   elementName: Ground
-  weakness_id: 3
+  weakness_id: 1

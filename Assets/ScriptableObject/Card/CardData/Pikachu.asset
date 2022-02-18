@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661d77dd8ae962e46997e01aeef52f7e, type: 3}
   m_Name: Pikachu
   m_EditorClassIdentifier: 
-  id: 12
+  id: 6
   userId: 0
   heroName: Pikachu
-  img: https://www.papyswarriors.com/medias/album/25-Pikachu.png
-  max_life_point: 600
-  current_life_point: 600
+  img: https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png
+  max_life_point: 100
+  current_life_point: 100
   xp: 0
   level: 1
   speed: 10
   element: {fileID: 11400000, guid: b3a21b5c456b50149a00253fc01b7282, type: 2}
-  move1: {fileID: 11400000, guid: 68a1d1910a048bb4e97d24ffb859d091, type: 2}
-  move2: {fileID: 11400000, guid: 68a1d1910a048bb4e97d24ffb859d091, type: 2}
-  move3: {fileID: 11400000, guid: 7f09d68984769f74298abe6bd87431ad, type: 2}
+  move1: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  move2: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
+  move3: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
   move4: {fileID: 11400000, guid: c04442cdb28a01949a710cb3ece5a9a7, type: 2}
-  price: 12345
+  price: 100
